@@ -8,10 +8,8 @@
     - initial-scale=1: non zoomare automaticamente all’apertura, quindi mostra la pagina alla scala normale.
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <!-- 🛑🛑🛑 METTERE NELLA CARTELLA DELLE IMMAGINI LA FAVICON CON QUESTE CARATTERISTICHE E TOGLIERE QUESTO COMMENTO. -->
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <!-- 🛑🛑🛑 SCRIVERE NOME TITOLO E TOGLIERE QUESTO COMMENTO. -->
-    <title>NomeTitolo</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>GAITAC</title>
     <!-- Tag che serve a spiegare ai motori di ricerca di cosa tratta la pagina. -->
     <!-- 🛑🛑🛑 SCRIVERE NOME TITOLO E TOGLIERE QUESTO COMMENTO. -->
     <meta name="description" content="Descrizione della pagina.">
@@ -33,10 +31,10 @@
 
     <!-- Parte della barra di navigazione presente dopo il logo. -->
     <div class="navbar-2">
-      <a href="#about">Chi siamo</a>
-      <a href="#services">Cosa facciamo</a>
-      <a href="#contacts">Contattaci</a>
-      <a href="#location">Dove trovarci</a>
+      <a href="#about">Chi sono</a>
+      <a href="#services">Cosa faccio</a>
+      <a href="#contacts">Contattami</a>
+      <a href="#location">Dove trovarmi</a>
     </div>
 
     <!-- Menu a tendina per la visualizzazione su dispositivi mobili con il relativo bottone. -->
@@ -44,10 +42,10 @@
       ☰
     </button>
     <aside class="mobile-menu">
-      <a href="#about">Chi siamo</a>
-      <a href="#services">Cosa facciamo</a>
-      <a href="#contacts">Contattaci</a>
-      <a href="#location">Dove trovarci</a>
+      <a href="#about">Chi sono</a>
+      <a href="#services">Cosa faccio</a>
+      <a href="#contacts">Contattami</a>
+      <a href="#location">Dove trovarmi</a>
     </aside>
   </nav>
 
@@ -72,17 +70,15 @@
       </p>
     </section>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA A QUESTA SEZIONE E TOGLIERE QUESTO COMMENTO. -->
     <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
     <section id="contacts" class="section-page">
-      <h2>Scrivici</h2>
+      <h1 style="color: #ffffff;"><em>INFORMAZIONI </em></h1>
       <div id="formContattaci">
         <!-- Utilizzo del servizio mail di formsubmit che permette di inviare messaggi via email. -->
-        <form id="form" action="https://formsubmit.co/gjergjcoli@outlook.com" method="post">
-          <!-- Disattivazione Recaptcha per evitare spam. -->
-          <input type="hidden" name="_captcha" value="false">
+        <form id="form" action="https://formsubmit.co/postmaster@gaitac.it" method="post">
+
           <!-- Oggetto personalizzato. -->
-          <input type="hidden" name="_subject" value="Messaggio dalla pagina SCRIVERE NOME DELLA PAGINA 🛑🛑🛑">
+          <input type="hidden" name="_subject" value="Messaggio dalla pagina GAITAC">
           <!-- Honey-pot per evitare spam. -->
           <input type="text" name="_honey" style="display:none">
           <input type="text" id="nome" class="nome" name="nome"
@@ -114,14 +110,10 @@
 
     </section>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA A QUESTA SEZIONE E TOGLIERE QUESTO COMMENTO. -->
     <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
     <section id="location" class="section-page">
-
-    <h1><em>BASE OPERATIVA</em></h1>
-    <p>I paesaggi della Toscana ispirano idee digitali.</p>
-        
-      <!-- 🛑🛑🛑 CAMBIARE EVENTUALI DIMENSIONI DEL FRAME DELLA MAPPA E TOGLIERE QUESTO COMMENTO. -->
+      <h1><em>BASE OPERATIVA</em></h1>
+      <p>I paesaggi della Toscana ispirano idee digitali.</p>
       <iframe
         src="https://www.google.com/maps?q=Toscana,Italia&output=embed"
         loading="lazy"
@@ -131,28 +123,22 @@
   </main>
 
   <footer>
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA E TOGLIERE QUESTO COMMENTO. -->
     <!-- Sezione del footer dove ci sono i contatti telefonici. -->
     <div id="infos" class="info-footer">
-      <h3>Denominazione azienda</h3>
-      P.IVA:
-      <br><br>Capitale Sociale:
-      <br><br>Locazione
+      <h3>Informazioni</h3>
+      Tuscany, Italy
       <br><br><img src="images/logo_footer.png" alt="Logo" class="logo-footer">
     </div>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA, TOGLIENDO NUMERI CHE NON SERVONO E TOGLIERE QUESTO COMMENTO. -->
     <!-- Sezione del footer in cui ci sono i numeri di telefono. -->
     <div id="links" class="info-links">
       <h3>Contatti</h3>
-      📞<a href="tel:+393331234567" class="tel"> 3331234567</a>
-      <br><br>📞<a href="tel:+393331234567" class="tel"> 3331234567</a>
-      <br><br>✉ &nbsp;<a href="mailto:info@azienda.it" class="mail"> info@azienda.it</a>
+      ✉ &nbsp;<a href="mailto:postmaster@gaitac.it" class="mail"> postmaster@gaitac.it</a>
     </div>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA CAMBIANDO I PERCORSI NEI LINK O RIMUOVERE SOCIAL CHE NON SERVONO E TOGLIERE QUESTO COMMENTO. -->
+    <!-- 🛑🛑🛑 AGGIUNGERE SEZIONE SOLO AL BISOGNO -->
     <!-- Sezione del footer in cui ci sono i collegamenti social. -->
-    <div id="social" class="info-social">
+    <!--<div id="social" class="info-social">
       <h3>Social</h3>
       <a href="https://www.facebook.com/tuapagina" target="_blank" rel="noopener noreferrer">
         <img src="images/social/icon-facebook.png" alt="Facebook">
@@ -165,7 +151,7 @@
       <a href="https://wa.me/393331234567" target="_blank" rel="noopener noreferrer">
         <img src="images/social/icon-whatsapp.png" alt="WhatsApp">
       </a>
-    </div>
+    </div>-->
 
     <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA METTENDO I LINK AI COOKIE E PRIVACY GIUSTI tramite il percorso creando anche la cartella (CON LINK DI RITORNO ALLE ALTRE DUE PAGINE) TOGLIERE QUESTO COMMENTO. -->
     <!-- Sezione del footer in cui ci sono i collegamenti ai privacy policy e cookies. -->
