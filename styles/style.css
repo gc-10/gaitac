@@ -47,17 +47,16 @@ body.page-loaded main {
     z-index: 1000;   /* Assicura che la barra di navigazione sia sempre sopra gli altri elementi. */
     width: 100%;
     height: 100px;
-    background-color: #ffffff;
+    background-color: #454444;
     display: flex;
     justify-content: space-between;   /* Spazio tra il logo e i link di navigazione (gli elementi interni). */
     align-items: center;
-    border-bottom: #000000 1px solid;
     padding: 0 32px;   /* Spazio interno a sinistra e a destra. */
 }
 
 /* Stile per il logo all'winterno della barra di navigazione. */
 .logo img {
-    height: 40px;
+    height: 50px;
     width: auto;
     display: block;
     transition: ease-in-out 0.9s;   /* Transizione per l'effetto hover. */
@@ -73,7 +72,7 @@ body.page-loaded main {
 }
 .navbar-2 a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-weight: 500;
     font-size: 20px;
     transition: color 0.9s ease;   /* Transizione per l'effetto hover. */
@@ -152,79 +151,57 @@ main {
     box-shadow: 0 0 0 4px rgba(100, 100, 100, 0.12);
     transform: translateY(-1px);
 }
-
 .invia {
-    background: linear-gradient(135deg, #fdfdfd 0%, #e6e6e6 100%);
-    color: #333333;
-    padding: 20px 60px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #7a7a7a, #4f4f4f);
+    color: white;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.4px;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     transition: 
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        color 0.25s ease;
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
 }
-
 .invia:hover {
-    background: linear-gradient(135deg, #626262 0%, #696969 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #8a8a8a, #5c5c5c);
     transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
 }
-
 .invia:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
-
 .invia:focus {
     outline: none;
-    box-shadow:
-        0 0 0 3px rgba(255, 255, 255, 0.25),
-        0 0 0 6px rgba(80, 80, 80, 0.30);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25),
+                0 0 0 6px rgba(80, 80, 80, 0.35);
 }
 
-/* 1) Chi siamo */
+/* Stile per le diverse sezioni del sito. */
 #about {
-    background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%);
-    color: #111;
+    background-color: #b03636;
 }
-
-/* 2) Cosa facciamo: più scura, ma coerente con la prima */
 #services {
-    background: linear-gradient(to bottom, #dcdcdc 0%, #7f7f7f 100%);
-    color: #111;
+    background-color: #f0c14b;
 }
-
-/* 3) Contattaci: ancora più scura, partendo dal finale della seconda */
-#contacts {
-    background: linear-gradient(to bottom, #7f7f7f 0%, #555555 45%, #353535 100%);
-    color: #fff;
-}
-
-/* 4) Dove trovarci: chiusura naturale fino al nero */
-#location {
-    background: linear-gradient(to bottom, #353535 0%, #1a1a1a 45%, #000000 100%);
-    color: #fff;
-}
-
-/* Stile particolare di allineamento al centro lungo X e Y per il contenuto della sezione "Contattaci". */
 #contacts {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* Centro lungo Y. */
-    align-items: center;   /* Centro lungo X. */
+    justify-content: center; /* centro lungo Y */
+    align-items: center;     /* centro lungo X */
     text-align: center;
+    background-color: #4a90e2;
+}
+#location {
+    background-color: #6abf69;
 }
 
 footer {
-    background-color: #000000;
-    color: #fff;
+    background-color: black;
     color: white;
     padding: 40px;
     display: flex;
@@ -237,18 +214,18 @@ footer {
 #links {
     color: white;
 }
-.mail, .info-sensitive a {
+.tel, .mail, .info-sensitive a {
     text-decoration: none;
     cursor: pointer;
     color: white;
     transition: color 0.9s ease;   /* Transizione per l'effetto hover sui numeri di telefono. */
 }
-.mail:hover, .info-sensitive a:hover {
+.tel:hover, .mail:hover, .info-sensitive a:hover {
     color: darkgoldenrod;
 }
 .logo-footer {
-    width: 120px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
 }
 
 .info-social a {
