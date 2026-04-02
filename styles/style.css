@@ -108,8 +108,8 @@ main {
 .section-page {
     min-height: calc(100vh - 100px);   /* Imposta l'altezza minima di ogni sezione per occupare almeno l'intera altezza della finestra, sottraendo l'altezza della navbar. */
     scroll-margin-top: 100px;   /* Aggiunge un margine superiore per lo scroll, in modo che quando si clicca su un link di navigazione, la sezione non venga nascosta sotto la navbar. */
-    /* Metto il padding solo ai lati di 40px, mentre di 20px sopra e sotto. */ 
-    padding: 20px 40px 20px 40px;
+    /* Metto il padding solo ai lati di 40px, mentre di 5px sopra e sotto. */ 
+    padding: 5px 40px 5px 40px;
 }
 
 /* Dimensionamento e stile per l'iframe della sezione "Dove siamo". */
@@ -159,7 +159,7 @@ main {
     color: #333333;
     padding: 20px 60px;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
+    border-radius: 32px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
