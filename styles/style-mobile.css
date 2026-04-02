@@ -89,6 +89,7 @@
     }
 
     .nome,.cognome, .telefono, .email, .messaggio {
+        padding: 8px 12px;
         width: 100%;
     }
 }
@@ -98,10 +99,6 @@
     /* Dimensione del frame per schermi molto piccoli. */
     .section-page:last-child iframe {
        height: 55svh;
-    }
-
-    .nome,.cognome, .telefono, .email, .messaggio {
-        padding: 8px 12px;
     }
 }
 
