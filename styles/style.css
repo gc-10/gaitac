@@ -1,0 +1,266 @@
+/* Foglio di stile principale per il sito web. */
+
+/* Stile per tutti gli elementi del sito. */
+* {
+    /* 
+    Si applica il box-sizing a tutti gli elementi per includere padding e border nelle dimensioni totali. 
+    Si fa questo per evitare problemi di layout, in modo che tutte le sezioni abbiano le dimensioni corrette e prendano lo schermo intero.
+    */
+    box-sizing: border-box;
+}
+
+/* Stile per il corpo della pagina. */
+body {
+    margin: 0;   /* Rimuove i margini predefiniti del browser in modo che la navbar non abbia margini. */
+    padding: 0;  /* Rimuove i padding predefiniti del browser. */
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+/* Effetto in ingresso della pagina con scorrimento dall'alto verso il basso sia della barra di navigazione sia delle sezioni. */
+.navbar {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: 
+        opacity 0.10s ease, 
+        transform 0.8s ease;
+}
+main {
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: 
+        opacity 0.8s ease, 
+        transform 0.8s ease;
+}
+body.page-loaded .navbar {
+    opacity: 1;
+    transform: translateY(0);
+}
+body.page-loaded main {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stile per la barra di navigazione. */
+.navbar {
+    position: fixed;   /* Posizione fissa per mantenere la barra di navigazione sempre visibile durante lo scorrimento. */
+    z-index: 1000;   /* Assicura che la barra di navigazione sia sempre sopra gli altri elementi. */
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;   /* Spazio tra il logo e i link di navigazione (gli elementi interni). */
+    align-items: center;
+    border-bottom: #000000 1px solid;
+    padding: 0 32px;   /* Spazio interno a sinistra e a destra. */
+}
+
+/* Stile per il logo all'winterno della barra di navigazione. */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: ease-in-out 0.9s;   /* Transizione per l'effetto hover. */
+}
+.logo img:hover {
+    transform: scale(1.05);   /* Effetto di ingrandimento al passaggio del mouse. */
+}
+
+/* Stile per i link di navigazione. */
+.navbar-2 {
+    display: flex;
+    gap: 24px;   /* Spazio tra i link. */
+}
+.navbar-2 a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.9s ease;   /* Transizione per l'effetto hover. */
+}
+
+/* Comportamenti sui link della barra di navigazione */
+.navbar-2 a:hover {
+    color: darkgoldenrod;   /* Colore diverso al passaggio del mouse. */
+}
+.navbar-2 a.active {
+    color: red;
+    border-bottom-color: red;   /* Colore per la selezione sul pulsante. */
+}
+.navbar-2 a.active:hover {
+    color: red;   /* Il link attivo resta rosso anche in hover. */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+/*SISTEMARE L'HOVER CHE NON FUNZIONA PIU! E AL POOSTO DEL COLORE DI ABOUT METTERE UN SOTTOLINEATO O QUALCOSA CHE INDICHI CHE SIAMO SU QUEL LINK.*/
+
+/* Stile per il contenuto principale del sito che racchiude tutte le sezioni. */
+main {
+    /*
+    Si mette per spostare tutto il contenuto di ciascuna sezione sotto la navbar. 
+    Se la navbar è fixed, esce dal flusso normale della pagina, quindi senza questo spazio il contenuto partirebbe “dietro” la navbar.
+    Quindi le sezioni rimangono nascoste.
+    */
+    padding-top: 100px;
+}
+
+/* Stile per il contenuto della sezione "Chi siamo". */
+.section-page {
+    min-height: calc(100vh - 100px);   /* Imposta l'altezza minima di ogni sezione per occupare almeno l'intera altezza della finestra, sottraendo l'altezza della navbar. */
+    scroll-margin-top: 100px;   /* Aggiunge un margine superiore per lo scroll, in modo che quando si clicca su un link di navigazione, la sezione non venga nascosta sotto la navbar. */
+    padding: 40px;
+}
+
+/* Dimensionamento e stile per l'iframe della sezione "Dove siamo". */
+.section-page:last-child iframe{
+    display: block;
+    width: 100%;
+    height: 65svh;
+}
+
+/* Stile di tutti i campi del form di contatto. */
+#formContattaci {
+    width: 100%;
+    height: 65svh;
+    padding: 10px;
+    border-radius: 8px;
+}
+.nome,.cognome, .telefono, .email, .messaggio {
+    width: 60%;
+    padding: 18px 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #222;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    transition: 
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    box-sizing: border-box;
+}
+.nome::placeholder, .cognome::placeholder, .telefono::placeholder, .email::placeholder, .messaggio::placeholder {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #888;
+}
+.nome:focus, .cognome:focus, .telefono:focus, .email:focus, .messaggio:focus {
+    border-color: #7a7a7a;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(100, 100, 100, 0.12);
+    transform: translateY(-1px);
+}
+
+.invia {
+    background: linear-gradient(135deg, #fdfdfd 0%, #e6e6e6 100%);
+    color: #333333;
+    padding: 20px 60px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+}
+
+.invia:hover {
+    background: linear-gradient(135deg, #626262 0%, #696969 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.22);
+}
+
+.invia:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.invia:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.25),
+        0 0 0 6px rgba(80, 80, 80, 0.30);
+}
+
+/* 1) Chi siamo */
+#about {
+    background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%);
+    color: #111;
+}
+
+/* 2) Cosa facciamo: più scura, ma coerente con la prima */
+#services {
+    background: linear-gradient(to bottom, #dcdcdc 0%, #7f7f7f 100%);
+    color: #111;
+}
+
+/* 3) Contattaci: ancora più scura, partendo dal finale della seconda */
+#contacts {
+    background: linear-gradient(to bottom, #7f7f7f 0%, #555555 45%, #353535 100%);
+    color: #fff;
+}
+
+/* 4) Dove trovarci: chiusura naturale fino al nero */
+#location {
+    background: linear-gradient(to bottom, #353535 0%, #1a1a1a 45%, #000000 100%);
+    color: #fff;
+}
+
+/* Stile particolare di allineamento al centro lungo X e Y per il contenuto della sezione "Contattaci". */
+#contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Centro lungo Y. */
+    align-items: center;   /* Centro lungo X. */
+    text-align: center;
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;   /* Spazio tra gli elementi interni. */
+    align-items: flex-start;   /* Allineo internamente i blocchi tra loro, in modo che gli elementi del footer partando dalla stessa altezza. */
+    font-size: 16px;
+}
+
+/* Effetti di tutto ciò che c'è nel footer. */
+#links {
+    color: white;
+}
+.mail, .info-sensitive a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    transition: color 0.9s ease;   /* Transizione per l'effetto hover sui numeri di telefono. */
+}
+.mail:hover, .info-sensitive a:hover {
+    color: darkgoldenrod;
+}
+.logo-footer {
+    width: 120px;
+    height: 20px;
+}
+
+.info-social a {
+    display: inline-flex;
+    text-decoration: none;
+    filter: brightness(0.7);   /* Inizialmente, i loghi social un po' più scuri. */
+    /* Transizione per l'effetto hover sui loghi accendendo i loghi e zommandoli. */
+    transition: 
+        filter 0.3s ease,   
+        ease-in-out 0.3s;   
+}
+.info-social a:hover {
+    filter: brightness(0.9);   /* Effetto di colore più acceso sui loghi. */
+    transform: scale(1.05);   /* Effetto di ingrandimento al passaggio del mouse. */
+}
