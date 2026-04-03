@@ -1,16 +1,15 @@
-/* Stile per i link di navigazione in modalità mobile, che innanzitutto non sono visibili */
+/* Stile per i link di navigazione in modalità mobile, che innanzitutto non sono visibili. */
 .menu-toggle {
     display: none;
-    /* Transizione per l'effetto di trasformazione da X a ☰. */
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease;   /* Transizione per l'effetto di trasformazione da X a ☰. */
 }
 .mobile-menu {
     display: none;
 }
 
-/* Rotazione del menu quando viene cliccato per aprirlo o per chiuderlo. */
+/* Menu a tendina. */
 .menu-toggle.changing {
-    transform: rotate(90deg);
+    transform: rotate(90deg);   /* Rotazione del menu quando viene cliccato per aprirlo o per chiuderlo. */
 }
 
 /* Si colora di rosso il link attivo del menu mobile. */
@@ -19,7 +18,19 @@
     border-bottom-color: red;   
 }
 
-/* Media Queries per dispositivi mobili */
+@media( max-width: 1181px) {
+    .carosello img {
+        height: 370px;         /* Mantiene le proporzioni corrette. */
+    }
+}
+
+@media( max-width: 1025px) {
+    .carosello img {
+        height: 360px;         /* Mantiene le proporzioni corrette. */
+    }
+}
+
+/* Media Queries per dispositivi mobili. */
 @media (max-width: 821px) { 
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
@@ -70,13 +81,13 @@
         gap: 40px;
     }
 
-    /* Animazione in apertura */
+    /* Animazione in apertura. */
     .mobile-menu.open {
         display: flex;
         animation: slideIn 0.4s ease forwards;
     }
 
-    /* Animazione in chiusura */
+    /* Animazione in chiusura. */
     .mobile-menu.closing {
         display: flex;   /* Mantiene il menu visibile durante l'animazione. */
         animation: slideOut 0.4s ease forwards;
@@ -92,6 +103,20 @@
         padding: 8px 12px;
         width: 100%;
     }
+
+    hr {
+        width: 100%;
+    }
+
+    /* Stile del carosello in modalità mobile. */
+    .carosello {
+        width: 100%;           /* Il carosello occupa l'80% della larghezza del suo contenitore (la sezione). */
+    }
+    
+    .carosello img {
+        width: 100%;          /* L'immagine occupa tutta la larghezza disponibile. */
+        height: 350px;         /* Mantiene le proporzioni corrette. */
+    }
 }
 
 /* Si cambia la dimensione del frame in base alla grandezza dello schermo. */
@@ -99,6 +124,11 @@
     /* Dimensione del frame per schermi molto piccoli. */
     .section-page:last-child iframe {
        height: 55svh;
+    }
+    
+    .carosello img {
+        width: 100%;          /* L'immagine occupa tutta la larghezza disponibile. */
+        height: 300px;         /* Mantiene le proporzioni corrette. */
     }
 }
 

@@ -11,8 +11,7 @@
     <link rel="icon" href="images/favicon.png" type="image/png">
     <title>GAITAC</title>
     <!-- Tag che serve a spiegare ai motori di ricerca di cosa tratta la pagina. -->
-    <!-- 🛑🛑🛑 SCRIVERE NOME TITOLO E TOGLIERE QUESTO COMMENTO. -->
-    <meta name="description" content="Descrizione della pagina.">
+    <meta name="description" content="GAITAC sviluppa siti web e progetti digitali in Toscana, con cura, creatività e soluzioni su misura per professionisti e attività.">
     <!-- Tag che serve a dire al browser che la pagina è pensata per tema chiaro. Se il browser supporta i temi chiari e scuri, questa pagina sarà visualizzata in modalità chiara. -->
     <meta name="color-scheme" content="light">
     <link rel="stylesheet" href="styles/style.css">
@@ -52,28 +51,58 @@
   <!-- Contenuto principale del sito dove al suo interno vengono inserite le varie sezioni. -->
   <main>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA A QUESTA SEZIONE E TOGLIERE QUESTO COMMENTO. -->
-    <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
-    <section id="about" class="section-page">   
-      <h2>Presentazione</h2>
-      <p>
-        Descrizione dell'azienda.
-      </p>
+    <!-- Si mette "section-page" perchè gestiamo nel CSS la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
+    <section id="about" class="section-page">  
+      <img src="images/background.png" alt="" aria-hidden="true" class="background-about">      
+      <em><p style="font-size: large;">
+        "Ciao sono <strong>Gjergj</strong>, un informatico che dà forma alle idee creando <br>progetti per il mondo ON-LINE con cura e creatività."<br><br>
+      </p></em>
     </section>
 
-    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA A QUESTA SEZIONE E TOGLIERE QUESTO COMMENTO. -->
     <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
     <section id="services" class="section-page">
-      <h2>Servizi</h2>
-      <p>
-        Descrizione dei servizi offerti.
+      <h1>PORTFOLIO</h1>
+      <p style="font-size: large;">
+        Mi occupo della parte relativa allo sviluppo web, curando struttura, stile e interattività dei siti; di seguito alcuni dei miei progetti.
       </p>
+      <!--  Contenitore generale del carosello. -->
+      <div class="carosello">
+
+        <!-- Pulsante per andare all'immagine precedente (-1=indietro di una slide). -->
+        <button class="freccia sinistra" onclick="cambiaSlide(-1)">
+            &#10094;
+        </button>
+
+        <!-- Immagine principale del relativa al sito associato. -->
+        <img id="immagineCarosello" src="" alt="Anteprima sito">
+
+        <!-- Pulsante per andare all'immagine successiva (1=avanti di una slide). -->
+        <button class="freccia destra" onclick="cambiaSlide(1)">
+            &#10095;
+        </button>
+    </div>
+
+    <!-- 
+    Contenitore del bottone/link.
+    Serve solo per tenere il pulsante separato visivamente dal carosello.
+    -->
+    <div class="contenitore-link">
+
+        <!-- 
+        Link che aprirà il sito relativo all'immagine attualmente mostrata.
+        L'attributo href viene inizializzato con #, ma verrà sostituito da JavaScript.
+        target="_blank" fa aprire il link in una nuova scheda.
+        -->
+        <a id="bottoneLink" href="#" target="_blank">
+            Apri sito
+        </a>
+    </div>
     </section>
 
     <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
     <section id="contacts" class="section-page">
-      <h1 style="color: #ffffff;"><em>INFORMAZIONI </em></h1>
-      <div id="formContattaci">
+      <h1 style="color: #f9f9f9; margin-bottom: -10px">FORM DI CONTATTO</h1>
+      <div id="formContattaci"><hr><br>
         <!-- Utilizzo del servizio mail di formsubmit che permette di inviare messaggi via email. -->
         <form id="form" action="https://formsubmit.co/postmaster@gaitac.it" method="post">
 
@@ -103,7 +132,7 @@
                   placeholder="La tua email"
                   required><br><br>
           <textarea id="messaggio" class="messaggio" name="messaggio" rows="4" placeholder="Descrivi la tua richiesta" required></textarea><br><br>
-          <button type="submit" id="invia" class="invia">Invia</button>
+          <button type="submit" id="invia" class="invia">Invia</button><br><br><hr>
         </form>
         <p></p>   <!-- Paragrafo vuoto che serve a mostrare il messaggio di conferma dopo l'invio del form. -->
       </div>
@@ -112,8 +141,8 @@
 
     <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
     <section id="location" class="section-page">
-      <h1><em>BASE OPERATIVA</em></h1>
-      <p>I paesaggi della Toscana ispirano idee digitali.</p>
+      <h1>BASE OPERATIVA</h1>
+      <p><em>Ovunque in Toscana alla ricerca di ispirazione per idee digitali.</em></p>
       <iframe
         src="https://www.google.com/maps?q=Toscana,Italia&output=embed"
         loading="lazy"
@@ -138,20 +167,17 @@
 
     <!-- 🛑🛑🛑 AGGIUNGERE SEZIONE SOLO AL BISOGNO -->
     <!-- Sezione del footer in cui ci sono i collegamenti social. -->
-    <!--<div id="social" class="info-social">
+    <div id="social" class="info-social">
       <h3>Social</h3>
-      <a href="https://www.facebook.com/tuapagina" target="_blank" rel="noopener noreferrer">
-        <img src="images/social/icon-facebook.png" alt="Facebook">
+      <a href="https://www.linkedin.com/in/gjergj-coli-bb32aa366" target="_blank" rel="noopener noreferrer">
+        <img src="images/social/icon-linkedin.png" alt="LinkedIn">
       </a>
 
-      <a href="https://www.instagram.com/tuoprofilo" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/gjergjcoli" target="_blank" rel="noopener noreferrer">
         <img src="images/social/icon-instagram.png" alt="Instagram">
       </a>
 
-      <a href="https://wa.me/393331234567" target="_blank" rel="noopener noreferrer">
-        <img src="images/social/icon-whatsapp.png" alt="WhatsApp">
-      </a>
-    </div>-->
+    </div>
 
     <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA METTENDO I LINK AI COOKIE E PRIVACY GIUSTI tramite il percorso creando anche la cartella (CON LINK DI RITORNO ALLE ALTRE DUE PAGINE) TOGLIERE QUESTO COMMENTO. -->
     <!-- Sezione del footer in cui ci sono i collegamenti ai privacy policy e cookies. -->
@@ -167,6 +193,7 @@
   <script src="scripts/main.js"></script>   <!-- Script di funzioni standard. -->
   <script src="scripts/effectsScrolling.js"></script>   <!-- Script che applica un effetto di scorrimento fluido quando si clicca su un link di navigazione. -->
   <script src="scripts/notifyForm.js"></script>   <!-- Script che applica un effetto di scorrimento fluido quando si clicca su un link di navigazione. -->
+  <script src="scripts/carousel.js"></script>   <!-- Script che gestisce il carosello delle immagini. -->
 
 </body>
 

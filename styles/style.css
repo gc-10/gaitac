@@ -11,8 +11,8 @@
 
 /* Stile per il corpo della pagina. */
 body {
-    margin: 0;   /* Rimuove i margini predefiniti del browser in modo che la navbar non abbia margini. */
-    padding: 0;  /* Rimuove i padding predefiniti del browser. */
+    margin: 0;  
+    padding: 0;  
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
@@ -92,8 +92,6 @@ body.page-loaded main {
     text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
-/*SISTEMARE L'HOVER CHE NON FUNZIONA PIU! E AL POOSTO DEL COLORE DI ABOUT METTERE UN SOTTOLINEATO O QUALCOSA CHE INDICHI CHE SIAMO SU QUEL LINK.*/
-
 /* Stile per il contenuto principale del sito che racchiude tutte le sezioni. */
 main {
     /*
@@ -170,19 +168,17 @@ main {
         box-shadow 0.25s ease,
         color 0.25s ease;
 }
-
 .invia:hover {
     background: linear-gradient(135deg, #626262 0%, #696969 100%);
     color: #ffffff;
     transform: translateY(-2px);
+    border: 1px solid #ffffff;
     box-shadow: 0 9px 20px rgba(0, 0, 0, 0.22);
 }
-
 .invia:active {
     transform: translateY(0);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 }
-
 .invia:focus {
     outline: none;
     box-shadow:
@@ -190,28 +186,41 @@ main {
         0 0 0 6px rgba(80, 80, 80, 0.30);
 }
 
-/* 1) Chi siamo */
+/* 1) Chi siamo. */
 #about {
     background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%);
     color: #111;
+    position: relative;
+    display: flex;
+    justify-content: left;  
 }
 
-/* 2) Cosa facciamo: più scura, ma coerente con la prima */
+/* 2) Cosa facciamo: più scura, ma coerente con la prima. */
 #services {
     background: linear-gradient(to bottom, #dcdcdc 0%, #7f7f7f 100%);
     color: #111;
 }
 
-/* 3) Contattaci: ancora più scura, partendo dal finale della seconda */
+/* 3) Contattaci: ancora più scura, partendo dal finale della seconda. */
 #contacts {
     background: linear-gradient(to bottom, #7f7f7f 0%, #555555 45%, #353535 100%);
     color: #fff;
 }
 
-/* 4) Dove trovarci: chiusura naturale fino al nero */
+/* 4) Dove trovarci: chiusura naturale fino al nero. */
 #location {
     background: linear-gradient(to bottom, #353535 0%, #1a1a1a 45%, #000000 100%);
     color: #fff;
+}
+
+/* Stile per l'immagine di sfondo della sezione "Chi sono". */
+.background-about {
+    position: absolute;
+    inset: 0;   /* Posiziona l'immagine in modo che copra tutta la sezione. */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Assicura che l'immagine copra tutta l'area senza distorsioni. */
+    pointer-events: none;   /* Permette di cliccare sugli elementi sopra l'immagine senza problemi. */
 }
 
 /* Stile particolare di allineamento al centro per il contenuto della sezione "Contattaci". */
@@ -263,4 +272,107 @@ footer {
 .info-social a:hover {
     filter: brightness(0.9);   /* Effetto di colore più acceso sui loghi. */
     transform: scale(1.05);   /* Effetto di ingrandimento al passaggio del mouse. */
+}
+
+hr {
+    width: 60%;
+}
+
+/* Stile per il carosello che contiene i siti. */
+.carosello {
+    width: 80%;           /* Il carosello occupa l'80% della larghezza del suo contenitore (la sezione). */
+    position: relative;      /* Permette di posizionare le frecce in modo assoluto rispetto al carosello */
+    margin: 20px auto 20px auto; /* Centra il carosello orizzontalmente e aggiunge spazio sopra e sotto */
+    display: flex;           /* Usa Flexbox */
+    align-items: center;     /* Allinea verticalmente gli elementi interni */
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    overflow: hidden;        /* Nasconde eventuali parti fuori dal contenitore */
+}
+
+/* 
+Stile dell'immagine principale del carosello.
+*/
+.carosello img {
+    width: 100%;          /* L'immagine occupa tutta la larghezza disponibile */
+    height: 500px;         /* Mantiene le proporzioni corrette */
+    display: block;       /* Elimina piccoli spazi indesiderati tipici delle immagini inline */
+}
+
+/* 
+Stile comune delle due frecce.
+Vale sia per la sinistra sia per la destra.
+*/
+.freccia {
+    position: absolute;                 /* Le frecce stanno sopra l'immagine */
+    top: 50%;                           /* Le mette a metà altezza del carosello */
+    transform: translateY(-50%);        /* Corregge il posizionamento per centrarle perfettamente in verticale */
+    color: rgb(82, 82, 82);                       /* Colore della freccia */
+    border: none;                       /* Rimuove il bordo del bottone */
+    font-size: 28px;                    /* Grandezza del simbolo della freccia */
+    padding: 12px 18px;                 /* Spazio interno del pulsante */
+    cursor: pointer;                    /* Mostra la manina quando passi sopra */
+    border-radius: 8px;                 /* Arrotonda gli angoli del pulsante */
+    z-index: 2;                         /* Tiene le frecce sopra l'immagine */
+    transition: 
+        background-color 0.8s ease; /* Transizione per l'effetto hover */
+}
+
+/* 
+Effetto hover delle frecce.
+Quando passi sopra col mouse, il bottone diventa più scuro.
+*/
+.freccia:hover {
+    background-color: rgba(157, 157, 157, 0.8);
+}
+
+/* 
+Posiziona la freccia sinistra vicino al bordo sinistro del carosello.
+*/
+.sinistra {
+    left: 12px;
+}
+
+/* 
+Posiziona la freccia destra vicino al bordo destro del carosello.
+*/
+.destra {
+    right: 12px;
+}
+
+/* 
+Contenitore del link sotto il carosello.
+Serve per centrare il bottone.
+*/
+.contenitore-link {
+    text-align: center;  /* Centra orizzontalmente il bottone/link */
+    margin-top: 12px;    /* Distanza dal carosello sopra */
+}
+
+/* 
+Stile del bottone-link che apre il sito.
+In realtà è un tag <a>, ma viene stilizzato come un bottone.
+*/
+#bottoneLink {
+    display: inline-block;            /* Permette padding, dimensioni e comportamento simile a un bottone */
+    margin-top: -15px;              /* Distanza dal carosello sopra, leggermente sovrapposto per un effetto più compatto */
+    padding: 20px 60px;
+    background-color: #111111;        /* Sfondo scuro */
+    color: white;                     /* Testo bianco */
+    text-decoration: none;            /* Rimuove la sottolineatura classica dei link */
+    border-radius: 32px;              /* Angoli arrotondati */
+    font-weight: 600;                 /* Testo un po’ più marcato */
+    transition: 
+        transform 0.25s ease,         /* Animazione per il piccolo spostamento verticale */
+        background-color 0.25s ease;  /* Animazione per il cambio colore */
+}
+
+/* 
+Effetto hover del bottone-link.
+Quando passi sopra, il bottone cambia leggermente colore e si alza un po’.
+*/
+#bottoneLink:hover {
+    background-color: #8d8d8d;
+    color: rgb(40, 39, 39);
+    border: #000000 1px solid;
+    transform: translateY(-2px);
 }
