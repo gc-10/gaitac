@@ -18,24 +18,11 @@
     border-bottom-color: red;   
 }
 
-@media( max-width: 1181px) {
-    .carosello img {
-        height: 370px;         /* Mantiene le proporzioni corrette. */
-    }
-}
-
-@media( max-width: 1025px) {
-    .carosello img {
-        height: 360px;         /* Mantiene le proporzioni corrette. */
-    }
-}
-
 /* Media Queries per dispositivi mobili. */
 @media (max-width: 1281px) { 
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
     body {
-        width: 80%;
         text-align: center;
         overflow-x: hidden;
         box-sizing: border-box;
@@ -111,12 +98,15 @@
 
     /* Stile del carosello in modalità mobile. */
     .carosello {
-        width: 100%;           /* Il carosello occupa l'80% della larghezza del suo contenitore (la sezione). */
+        width: 100%;           /* Il carosello occupa tutta la larghezza disponibile. */
+        height: 330px;         /* Altezza del carosello in mobile. */
     }
     
     .carosello img {
-        width: 100%;          /* L'immagine occupa tutta la larghezza disponibile. */
-        height: 350px;         /* Mantiene le proporzioni corrette. */
+        width: auto;          /* Mantiene le proporzioni corrette. */
+        max-width: calc(100% - 80px); /* Lascia visibile lo sfondo anche in mobile. */
+        max-height: calc(100% - 32px); /* Tiene l'immagine dentro al carosello. */
+        height: auto;         /* Mantiene le proporzioni corrette. */
     }
 }
 
@@ -126,10 +116,16 @@
     .section-page:last-child iframe {
        height: 55svh;
     }
+
+    .carosello {
+        height: 300px;
+    }
     
     .carosello img {
-        width: 100%;          /* L'immagine occupa tutta la larghezza disponibile. */
-        height: 300px;         /* Mantiene le proporzioni corrette. */
+        width: auto;          /* Mantiene le proporzioni corrette. */
+        max-width: calc(100% - 64px); /* Lascia visibile lo sfondo anche su schermi molto piccoli. */
+        max-height: calc(100% - 24px); /* Tiene l'immagine dentro al carosello. */
+        height: auto;         /* Mantiene le proporzioni corrette. */
     }
 }
 
