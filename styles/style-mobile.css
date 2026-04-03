@@ -35,6 +35,7 @@
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
     body {
+        width: 80%;
         text-align: center;
         overflow-x: hidden;
         box-sizing: border-box;
