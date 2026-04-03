@@ -300,7 +300,7 @@ hr {
     align-items: center;     /* Allinea verticalmente gli elementi interni */
     justify-content: center; /* Centra il contenuto orizzontalmente */
     overflow: hidden;        /* Nasconde eventuali parti fuori dal contenitore */
-    background: #dcdcdc;
+    background: none;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
