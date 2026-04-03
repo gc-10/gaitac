@@ -18,7 +18,7 @@
     border-bottom-color: red;   
 }
 
-@media( max-width: 1281px) {
+@media( max-width: 1181px) {
     .carosello img {
         height: 370px;         /* Mantiene le proporzioni corrette. */
     }
@@ -31,7 +31,7 @@
 }
 
 /* Media Queries per dispositivi mobili. */
-@media (max-width: 1025px) { 
+@media (max-width: 1281px) { 
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
     body {
