@@ -31,7 +31,7 @@
 }
 
 /* Media Queries per dispositivi mobili. */
-@media (max-width: 821px) { 
+@media (max-width: 1025px) { 
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
     body {
