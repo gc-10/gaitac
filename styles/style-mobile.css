@@ -84,11 +84,11 @@
     .mobile-menu a {
         color: white;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 18px;
     }
 
     .nome,.cognome, .telefono, .email, .messaggio {
-        padding: 8px 12px;
+        padding: 5px 5px;
         font-size: 13px;
         width: 100%;
     }
