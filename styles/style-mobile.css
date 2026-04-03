@@ -19,7 +19,7 @@
 }
 
 /* Media Queries per dispositivi mobili. */
-@media (max-width: 700px) { 
+@media (max-width: 900px) { 
 
     /* Blocco dello scroll orizzontale per schermi piccoli. */
     body {
