@@ -111,6 +111,25 @@
     }
 }
 
+/* In landscape su tablet e schermi bassi, la viewport visibile è più corta a causa delle barre del browser. */
+@media (max-width: 1281px) and (orientation: landscape) {
+    .section-page {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .carosello {
+        height: min(300px, 48dvh);
+    }
+
+    #formContattaci,
+    .section-page:last-child iframe {
+        height: 52vh;
+        height: 52svh;
+        height: 52dvh;
+    }
+}
+
 /* Si cambia la dimensione del frame in base alla grandezza dello schermo. */
 @media (max-width: 380px) {
     /* Dimensione del frame per schermi molto piccoli. */

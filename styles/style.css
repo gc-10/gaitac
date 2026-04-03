@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --navbar-height: 100px;
+}
+
 /* Stile per il corpo della pagina. */
 body {
     margin: 0;  
@@ -46,7 +50,7 @@ body.page-loaded main {
     position: fixed;   /* Posizione fissa per mantenere la barra di navigazione sempre visibile durante lo scorrimento. */
     z-index: 1000;   /* Assicura che la barra di navigazione sia sempre sopra gli altri elementi. */
     width: 100%;
-    height: 100px;
+    height: var(--navbar-height);
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;   /* Spazio tra il logo e i link di navigazione (gli elementi interni). */
@@ -99,13 +103,15 @@ main {
     Se la navbar è fixed, esce dal flusso normale della pagina, quindi senza questo spazio il contenuto partirebbe “dietro” la navbar.
     Quindi le sezioni rimangono nascoste.
     */
-    padding-top: 100px;
+    padding-top: var(--navbar-height);
 }
 
 /* Stile per il contenuto della sezione "Chi siamo". */
 .section-page {
-    min-height: calc(100vh - 100px);   /* Imposta l'altezza minima di ogni sezione per occupare almeno l'intera altezza della finestra, sottraendo l'altezza della navbar. */
-    scroll-margin-top: 100px;   /* Aggiunge un margine superiore per lo scroll, in modo che quando si clicca su un link di navigazione, la sezione non venga nascosta sotto la navbar. */
+    min-height: calc(100vh - var(--navbar-height));   /* Fallback per browser che non supportano le nuove unità dinamiche. */
+    min-height: calc(100svh - var(--navbar-height));   /* Tiene conto della viewport "piccola", utile quando la barra del browser è visibile. */
+    min-height: calc(100dvh - var(--navbar-height));   /* Usa la viewport dinamica quando supportata, evitando tagli in orientamento landscape. */
+    scroll-margin-top: var(--navbar-height);   /* Aggiunge un margine superiore per lo scroll, in modo che quando si clicca su un link di navigazione, la sezione non venga nascosta sotto la navbar. */
     /* Metto il padding solo ai lati di 40px, mentre di 5px sopra e sotto. */ 
     padding: 1px 40px 1px 40px;
 }
@@ -114,7 +120,9 @@ main {
 .section-page:last-child iframe{
     display: block;
     width: 100%;
+    height: 65vh;
     height: 65svh;
+    height: 65dvh;
 }
 
 #form{
@@ -123,7 +131,9 @@ main {
 /* Stile di tutti i campi del form di contatto. */
 #formContattaci {
     width: 100%;
+    height: 65vh;
     height: 65svh;
+    height: 65dvh;
     border-radius: 8px;
 }
 .nome,.cognome, .telefono, .email, .messaggio {
