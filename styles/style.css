@@ -9,8 +9,9 @@
     box-sizing: border-box;
 }
 
-:root {
-    --navbar-height: 100px;
+/* Selettore dell'elemento radice della pagina, cioè <html>, così definiamo delle variabili CSS globali richiamabili da qualsiasi elemento. */
+:root {                      
+    --navbar-height: 100px;   /* Variabile CSS globale: imposta l'altezza della navbar a 100px. */
 }
 
 /* Stile per il corpo della pagina. */
