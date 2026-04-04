@@ -88,8 +88,8 @@
     }
 
     .nome,.cognome, .telefono, .email, .messaggio {
-        padding: 5px 5px;
-        font-size: 13px;
+        padding: 10px 10px;
+        font-size: 14px;
         width: 100%;
     }
 
