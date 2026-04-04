@@ -109,6 +109,10 @@
         max-height: calc(100% - 32px); /* Tiene l'immagine dentro al carosello. */
         height: auto;         /* Mantiene le proporzioni corrette. */
     }
+
+    .background-about{
+        position: center;
+    }
 }
 
 /* In landscape su tablet e schermi bassi, la viewport visibile è più corta a causa delle barre del browser. */

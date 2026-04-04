@@ -204,7 +204,7 @@ main {
     color: #111;
     position: relative;
     display: flex;
-    justify-content: left;  
+    justify-content: center;  
 }
 
 /* 2) Cosa facciamo: più scura, ma coerente con la prima. */
@@ -300,7 +300,7 @@ hr {
     align-items: center;     /* Allinea verticalmente gli elementi interni */
     justify-content: center; /* Centra il contenuto orizzontalmente */
     overflow: hidden;        /* Nasconde eventuali parti fuori dal contenitore */
-    background: none;
+    background: none; 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -342,7 +342,7 @@ Effetto hover delle frecce.
 Quando passi sopra col mouse, il bottone diventa più scuro.
 */
 .freccia:hover {
-    background-color: rgba(157, 157, 157, 0.8);
+    color:#111111;
 }
 
 /* 
