@@ -65,7 +65,7 @@ navLinks.forEach(anchor => {
             - `700`: la durata dell'animazione in millisecondi;
             - `navbarHeight`: l'offset da sottrarre per non coprire il contenuto con la navbar.
             */
-            smoothScrollTo(targetElement, 700, navbarHeight);
+            smoothScrollTo(targetElement, 200, navbarHeight);
         }
     });
 });
