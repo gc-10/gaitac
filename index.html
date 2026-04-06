@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <!--
+    Serve a far vedere correttamente la pagina su smartphone e tablet:
+    - width=device-width: usa come larghezza della pagina la larghezza reale del dispositivo;
+    - initial-scale=1: non zoomare automaticamente all’apertura, quindi mostra la pagina alla scala normale.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>GAITAC</title>
+    <!-- Tag che serve a spiegare ai motori di ricerca di cosa tratta la pagina. -->
+    <meta name="description" content="GAITAC sviluppa siti web e progetti digitali in Toscana, con cura, creatività e soluzioni su misura per professionisti e attività.">
+    <!-- Tag che serve a dire al browser che la pagina è pensata per tema chiaro. Se il browser supporta i temi chiari e scuri, questa pagina sarà visualizzata in modalità chiara. -->
+    <meta name="color-scheme" content="light">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-mobile.css">
+
+</head>
+<!--Main -->
+<body>
+  <!-- Barra di navigazione principale. -->
+  <nav class="navbar" aria-label="Barra di navigazione principale">
+    <!-- Parte della barra di navigazione con il logo, che se cliccata riporta in cima al sito. -->
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </a>
+
+    <!-- Parte della barra di navigazione presente dopo il logo. -->
+    <div class="navbar-2">
+      <a href="#about">Chi sono</a>
+      <a href="#services">Cosa faccio</a>
+      <a href="#contacts">Contattami</a>
+      <a href="#location">Dove trovarmi</a>
+    </div>
+
+    <!-- Menu a tendina per la visualizzazione su dispositivi mobili con il relativo bottone. -->
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false">
+      ☰
+    </button>
+    <aside class="mobile-menu">
+      <a href="#about">Chi sono</a>
+      <a href="#services">Cosa faccio</a>
+      <a href="#contacts">Contattami</a>
+      <a href="#location">Dove trovarmi</a>
+    </aside>
+  </nav>
+
+  <!-- Contenuto principale del sito dove al suo interno vengono inserite le varie sezioni. -->
+  <main>
+
+    <!-- Si mette "section-page" perchè gestiamo nel CSS la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
+    <section id="about" class="section-page">  
+      <em><p style="font-size: large;">
+        "Ciao sono <strong>Gjergj</strong>, un informatico che dà forma alle idee creando <br>progetti per il mondo ON-LINE con cura e creatività."<br><br>
+      </p></em>
+      <!-- Immagine di sfondo per la sezione "Chi sono." -->
+      <img src="images/background.png" alt="" aria-hidden="true" class="background-about">      
+    </section>
+
+    <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
+    <section id="services" class="section-page">
+      <h1>PORTFOLIO</h1>
+      <p style="font-size: large;">
+        Mi occupo dello sviluppo web, curando struttura, stile e interattività dei siti; di seguito alcuni progetti.
+      </p>
+      <!--  Contenitore generale del carosello. -->
+      <div class="carosello">
+
+        <!-- Pulsante per andare all'immagine precedente (-1=indietro di una slide). -->
+        <button class="freccia sinistra" onclick="cambiaSlide(-1)">
+            &#10094;
+        </button>
+
+        <!-- Immagine principale del relativa al sito associato. -->
+        <img id="immagineCarosello" src="" alt="Anteprima sito">
+
+        <!-- Pulsante per andare all'immagine successiva (1=avanti di una slide). -->
+        <button class="freccia destra" onclick="cambiaSlide(1)">
+            &#10095;
+        </button>
+    </div>
+
+    <!-- 
+    Contenitore del bottone/link.
+    Serve solo per tenere il pulsante separato visivamente dal carosello.
+    -->
+    <div class="contenitore-link">
+
+        <!-- 
+        Link che aprirà il sito relativo all'immagine attualmente mostrata.
+        L'attributo href viene inizializzato con #, ma verrà sostituito da JavaScript.
+        target="_blank" fa aprire il link in una nuova scheda.
+        -->
+        <a id="bottoneLink" href="#" target="_blank">
+            Scopri il sito mostrato
+        </a>
+    </div>
+    </section>
+
+    <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
+    <section id="contacts" class="section-page">
+      <h1 style="color: #f9f9f9;">FORM DI CONTATTO</h1>
+      <div id="formContattaci">
+        <!-- Utilizzo del servizio mail di formsubmit che permette di inviare messaggi via email. -->
+        <form id="form" action="https://formsubmit.co/postmaster@gaitac.it" method="post">
+
+          <!-- Oggetto personalizzato. -->
+          <input type="hidden" name="_subject" value="Messaggio dalla pagina GAITAC">
+          <!-- Honey-pot per evitare spam. -->
+          <input type="text" name="_honey" style="display:none">
+          <input type="text" id="nome" class="nome" name="nome"
+                  pattern="^[A-Za-z\s]+$"
+                  title="Solo lettere con eventuali spazi, di cui la prima lettera è maiuscola"
+                  placeholder="Il tuo nome"
+                  required><br><br>
+          <input type="text" id="cognome" class="cognome" name="cognome"
+                  pattern="^[A-Za-z\s]+$"
+                  title="Solo lettere con eventuali spazi, di cui la prima lettera è maiuscola"
+                  placeholder="Il tuo cognome"
+                  required><br><br>
+          <!-- Si impone la prima cifra 0 per i numeri fissi e 3 per i numeri telefonici. -->
+          <input type="tel" id="telefono" class="telefono" name="telefono"
+                  pattern="^[03][0-9]{9}$"
+                  title="10 cifre, di cui la prima deve essere 3 o 0"   
+                  placeholder="Il tuo numero telefonico"
+                  required><br><br>
+          <input type="email" id="email" class="email" name="email"
+                  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  title="Inserisci un'email valida con tutte lettere minuscole. Es: nome@dominio.it"
+                  placeholder="La tua email"
+                  required><br><br>
+          <textarea id="messaggio" class="messaggio" name="messaggio" rows="4" placeholder="Descrivi la tua richiesta" required></textarea><br><br>
+          <button type="submit" id="invia" class="invia">Invia</button><br><br>
+        </form>
+        <p></p>   <!-- Paragrafo vuoto che serve a mostrare il messaggio di conferma dopo l'invio del form. -->
+      </div>
+
+    </section>
+
+    <!-- Si mette "section-page" perchè gestiamo nel css la dimensione che avrà ciascuna sezione ricalcolandone la grandezza sotto la barra di navigazione. -->
+    <section id="location" class="section-page">
+      <h1>BASE OPERATIVA</h1>
+      <p><em>Ovunque in Toscana alla ricerca di ispirazione per idee digitali.</em></p>
+      <iframe
+        src="https://www.google.com/maps?q=Toscana,Italia&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>    
+    </section>
+  </main>
+
+  <footer>
+    <!-- Sezione del footer dove ci sono i contatti telefonici. -->
+    <div id="infos" class="info-footer">
+      <h3>Informazioni</h3>
+      Tuscany, Italy
+      <br><br><img src="images/logo_footer.png" alt="Logo" class="logo-footer">
+    </div>
+
+    <!-- Sezione del footer in cui ci sono i numeri di telefono. -->
+    <div id="links" class="info-links">
+      <h3>Contatti</h3>
+      ✉ &nbsp;<a href="mailto:postmaster@gaitac.it" class="mail"> postmaster@gaitac.it</a>
+    </div>
+
+    <!-- Sezione del footer in cui ci sono i collegamenti social. -->
+    <div id="social" class="info-social">
+      <h3>Social</h3>
+      <a href="https://www.linkedin.com/in/gjergj-coli-bb32aa366" target="_blank" rel="noopener noreferrer">
+        <img src="images/social/icon-linkedin.png" alt="LinkedIn">
+      </a>
+
+      <a href="https://www.instagram.com/gjergjcoli" target="_blank" rel="noopener noreferrer">
+        <img src="images/social/icon-instagram.png" alt="Instagram">
+      </a>
+
+      <a href="https://github.com/gc-10" target="_blank" rel="noopener noreferrer">
+        <img src="images/social/icon-github.png" alt="GitHub">
+      </a>
+
+    </div>
+
+    <!-- 🛑🛑🛑 CAMBIARE ROBA INTERNA METTENDO I LINK AI COOKIE E PRIVACY GIUSTI tramite il percorso creando anche la cartella (CON LINK DI RITORNO ALLE ALTRE DUE PAGINE) TOGLIERE QUESTO COMMENTO. -->
+    <!-- Sezione del footer in cui ci sono i collegamenti ai privacy policy e cookies. -->
+    <div id="sensitive" class="info-sensitive">
+      <h3>Dati sensibili</h3>
+        &#9642;<a href="pages/privacy"> Privacy</a>
+        <br><br>&#9642;<a href="pages/cookies"> Cookies</a>
+    </div>
+
+  </footer>
+
+  <!-- Script effetti da applicare. -->
+  <script src="scripts/main.js"></script>   <!-- Script di funzioni standard. -->
+  <script src="scripts/effectsScrolling.js"></script>   <!-- Script che applica un effetto di scorrimento fluido quando si clicca su un link di navigazione. -->
+  <script src="scripts/notifyForm.js"></script>   <!-- Script che applica un effetto di scorrimento fluido quando si clicca su un link di navigazione. -->
+  <script src="scripts/carousel.js"></script>   <!-- Script che gestisce il carosello delle immagini. -->
+
+</body>
+
+</html>
