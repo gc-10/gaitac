@@ -10,7 +10,7 @@ const slides = [
     {
         img: "images/websites/tenutaTigliano.png",
         sfondo: "white",
-        link: "https://www.tenutatigliano.it",
+        link: "https://gc-10.github.io/Test/index.html",
         alt: "Tenuta Tigliano"
     }
     /* Si tengono le immagini, nel caso si vogliano mettere altri siti in futuro (DA CAMBIARE ROBA ALL'INTERNO 🛑🛑🛑)
